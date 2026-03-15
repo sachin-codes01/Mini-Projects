@@ -49,4 +49,3 @@ This mini project demonstrates basic **state management, event handling, and con
 ```
 Sachin Kumar
 https://github.com/sachin-codes01
->>>>>>> 0324e594530f0b8624cd0e66fbb0d36547a0402e

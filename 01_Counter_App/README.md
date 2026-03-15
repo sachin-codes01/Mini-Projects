@@ -6,10 +6,8 @@ A simple and interactive **Counter App** built using **React** and **useState Ho
 This mini project demonstrates basic **state management, event handling, and conditional styling** in React.
 
 ---
-## Counter App
-
 ![Counter App Screenshot](public/Counter_APP.png)
-=======
+---
 
 ## 🚀 Features
 

@@ -47,5 +47,4 @@ This mini project demonstrates basic **state management, event handling, and con
 * Author
 
 ```
-Sachin Kumar
 https://github.com/sachin-codes01

@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-
 # 🔢 Counter App (React)
 
 A simple and interactive **Counter App** built using **React** and **useState Hook**.

@@ -1,16 +1,64 @@
-# React + Vite
+# 📝 To-Do List App (React)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A clean and functional **To-Do List App** built using **React** and the **useState Hook**.
+This mini project demonstrates **CRUD operations, state management, and conditional styling** in React.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 📸 Screenshot
 
-## React Compiler
+![To-Do List App Screenshot](public/ToDo_List.png)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🚀 Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+* ➕ Add tasks with a **name** and **description**
+* ✏️ Edit existing tasks inline
+* 🗑️ Delete tasks from the list
+* ✅ Mark tasks as **completed** (with visual strikethrough)
+* 🔄 Cancel editing and reset the form
+* 📋 Table view with ID, status, name, and description
+
+---
+
+## 🛠️ Technologies Used
+
+* React
+* JavaScript (ES6)
+* CSS3
+* HTML5
+
+---
+
+## 📂 Project Structure
+
+```
+02_To-Do_List
+│
+├── public
+│   └── ToDo_List.png
+├── src
+│   ├── App.jsx
+│   ├── App.css
+│   └── main.jsx
+│
+├── index.html
+└── package.json
+```
+
+---
+
+## ▶️ Run the Project
+
+```
+npm install
+npm run dev
+```
+
+---
+
+## 👨‍💻 Author
+
+Sachin
+https://github.com/sachin-codes01

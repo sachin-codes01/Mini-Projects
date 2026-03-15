@@ -60,5 +60,5 @@ npm run dev
 
 ## 👨‍💻 Author
 
-Sachin Kumar  
+Sachin
 https://github.com/sachin-codes01

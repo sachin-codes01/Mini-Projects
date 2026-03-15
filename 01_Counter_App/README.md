@@ -1,14 +1,15 @@
 <<<<<<< HEAD
-## Screenshot
 
-![Counter App Screenshot](public/Counter_APP.png)
-=======
 # 🔢 Counter App (React)
 
 A simple and interactive **Counter App** built using **React** and **useState Hook**.
 This mini project demonstrates basic **state management, event handling, and conditional styling** in React.
 
 ---
+## Counter App
+
+![Counter App Screenshot](public/Counter_APP.png)
+=======
 
 ## 🚀 Features
 

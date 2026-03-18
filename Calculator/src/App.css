@@ -1,0 +1,123 @@
+.box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #1e1e1e;
+}
+
+.container {
+    width: 220px;
+    padding: 12px;
+    display: grid;
+    gap: 10px;
+    border-radius: 10px;
+    background-color: #2c2c2c;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+.screen {
+    display: grid;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.output,
+.input {
+    width: 100%;
+    height: 30px;
+    background-color: #3a3a3a;
+    color: white;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 6px;
+    box-sizing: border-box;
+}
+
+.input {
+    font-size: 14px;
+    color: #bdbdbd;
+}
+
+.output {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+button {
+    font-family: 'Inter', sans-serif;
+}
+
+button {
+    width: 100%;
+    height: 45px;
+    font-size: 18px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    background: #4a4a4a;
+    color: white;
+    transition: transform 0.15s ease, background 0.2s ease;
+}
+
+button:hover {
+    background: #5a5a5a;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6px;
+}
+
+.mui-btn {
+    font-size: 18px;
+}
+
+.zero-btn {
+    grid-column: span 2;
+}
+
+.output {
+    font-size: 30px;
+}
+
+button:nth-child(3),
+button:nth-child(4),
+button:nth-child(8),
+button:nth-child(12),
+button:nth-child(16){
+    background: #ff9500;
+    color: white;
+}
+
+button:nth-child(3):hover,
+button:nth-child(4):hover,
+button:nth-child(8):hover,
+button:nth-child(12):hover,
+button:nth-child(16):hover {
+    background: #e08900;
+}
+
+.action,
+.ac {
+    background: #d9534f;
+}
+
+.action:hover,
+.ac:hover {
+    background: #c9302c;
+}
+
+.equal {
+    background: #00c853;
+}
+
+.equal:hover {
+    background: #00b248;
+}

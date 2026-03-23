@@ -1,0 +1,99 @@
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.35;
+    }
+}
+
+.skel {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    animation: blink 1.4s ease-in-out infinite;
+}
+
+.skel-city {
+    width: 200px;
+    height: 27px;
+    margin-bottom: 4px;
+}
+
+.skel-country {
+    width: 120px;
+    height: 14px;
+    margin-bottom: 10px;
+}
+
+.skel-date {
+    width: 160px;
+    height: 14px;
+    margin-bottom: 4px;
+}
+
+.skel-time {
+    width: 80px;
+    height: 13px;
+}
+
+.skel-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+}
+
+.skel-icon-sm {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.skel-cond {
+    width: 70px;
+    height: 12px;
+}
+
+.skel-temp {
+    width: 140px;
+    height: 72px;
+    border-radius: 10px;
+}
+
+.skel-feels {
+    width: 100px;
+    height: 13px;
+    margin-top: 4px;
+}
+
+.details-grid .skel {
+    height: 44px;
+    border-radius: 12px;
+}
+
+.skel-astro {
+    width: 140px;
+    height: 13px;
+}
+
+.skel-fd-date {
+    width: 70px;
+    height: 12px;
+}
+
+.skel-fd-text {
+    width: 60px;
+    height: 12px;
+}
+
+.skel-h-time {
+    width: 36px;
+    height: 12px;
+}
+
+.skel-h-temp {
+    width: 32px;
+    height: 12px;
+}

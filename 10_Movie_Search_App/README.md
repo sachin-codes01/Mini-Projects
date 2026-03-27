@@ -7,9 +7,10 @@ This project demonstrates **API integration, real-time search, movie details, tr
 
 ## 📸 Screenshots
 
-![Movie Search Screenshot 1](public/moviesSearch01.png)
-![Movie Search Screenshot 2](public/moviesSearch02.png)
-
+<p align="left">
+  <img src="public/moviesSearch01.png" width="48%" />
+  <img src="public/moviesSearch02.png" width="48%" />
+</p>
 ---
 
 ## 🚀 Features

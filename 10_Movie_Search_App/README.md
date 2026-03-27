@@ -8,9 +8,9 @@ This project demonstrates **API integration, real-time search, categorized movie
 ## 📸 Screenshots
 
 <p align="left">
-  <img src="public/movies01.png" width="32%" />
-  <img src="public/movies02.png" width="32%" />
-  <img src="public/movies03.png" width="32%" />
+  <img src="public/movies01.png" width="40%" />
+  <img src="public/movies02.png" width="40%" />
+  <img src="public/movies03.png" width="40%" />
 </p>
 
 ---

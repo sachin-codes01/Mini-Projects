@@ -1,0 +1,153 @@
+.single-movie {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 24px 80px;
+}
+
+.status {
+  text-align: center;
+  margin-top: 80px;
+  color: #555b74;
+  font-size: 1.1rem;
+}
+
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #1a1d26;
+  border: 1.5px solid #2e3345;
+  color: #e8eaf0;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-family: inherit;
+  cursor: pointer;
+  margin-bottom: 36px;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.back-btn:hover {
+  border-color: #e8b04b;
+  background: #22263a;
+}
+
+.movie-top {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.movie-top img {
+  width: 280px;
+  min-width: 280px;
+  border-radius: 14px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+}
+
+.movie-details {
+  flex: 1;
+}
+
+.movie-details h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #f0f2f8;
+  margin-bottom: 10px;
+}
+
+.tagline {
+  font-style: italic;
+  color: #e8b04b;
+  font-size: 1rem;
+  margin-bottom: 18px;
+}
+
+.overview {
+  color: #a8afc4;
+  line-height: 1.75;
+  font-size: 0.97rem;
+  margin-bottom: 28px;
+  max-width: 620px;
+}
+
+.info-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  margin-bottom: 24px;
+}
+
+.info-grid span {
+  background: #1a1d26;
+  border: 1px solid #2e3345;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 0.88rem;
+  color: #c8cde0;
+  font-family: monospace;
+}
+
+.genres {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.genres span {
+  background: rgba(232, 176, 75, 0.12);
+  border: 1px solid rgba(232, 176, 75, 0.35);
+  color: #e8b04b;
+  padding: 5px 14px;
+  border-radius: 20px;
+  font-size: 0.82rem;
+  letter-spacing: 0.03em;
+}
+
+.trailer {
+  margin-top: 56px;
+}
+
+.trailer h2 {
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+  color: #f0f2f8;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  color: #555b74;
+}
+
+.iframe-wrap {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid #2e3345;
+}
+
+.iframe-wrap iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+@media (max-width: 680px) {
+  .movie-top {
+    flex-direction: column;
+  }
+
+  .movie-top img {
+    width: 100%;
+    min-width: unset;
+  }
+
+  .movie-details h1 {
+    font-size: 1.6rem;
+  }
+}

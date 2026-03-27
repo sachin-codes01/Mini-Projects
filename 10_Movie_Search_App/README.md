@@ -1,16 +1,113 @@
-# React + Vite
+# 🎬 Movie Search App (React)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A clean and responsive **Movie Search App** built using **React** and the **TMDB API**.  
+This project demonstrates **API integration, real-time search, movie details, trailer embedding, rate-limit handling, and dynamic UI rendering** in a real-world React application.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 📸 Screenshots
 
-## React Compiler
+![Movie Search Screenshot 1](public/moviesSearch01.png)
+![Movie Search Screenshot 2](public/moviesSearch02.png)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🚀 Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+* 🔍 **Search any movie** by title in real time
+* 👤 Displays **movie details** — poster, title, tagline, overview, and release date
+* 📊 Shows **rating, runtime, budget, and genres** at a glance
+* 🎥 Embeds **YouTube trailer** directly on the movie detail page
+* ⚠️ Handles **API errors** with friendly error messages
+* ❌ **"No Movies Found"** state for invalid or empty searches
+* ⏳ **Skeleton loader** (Material UI) while data is being fetched
+* ✕ **Clear button** to instantly reset the search
+* 🔙 **Back button** on movie detail page to return to results
+* ⚡ Smooth, responsive, and interactive UI
+
+---
+
+## 🛠️ Technologies Used
+
+* React
+* React Router DOM
+* JavaScript (ES6+)
+* CSS3
+* HTML5
+* TMDB REST API (`api.themoviedb.org`)
+* Material UI (`@mui/material` — Skeleton)
+* Vite (build tool)
+
+---
+
+## 📂 Project Structure
+
+```
+Movie_Search_App/
+│
+├── public/
+│   ├── moviesSearch01.png
+│   └── moviesSearch02.png
+├── src/
+│   ├── components/
+│   │   ├── Home/
+│   │   │   ├── Home.jsx
+│   │   │   └── Home.css
+│   │   ├── Movies/
+│   │   │   ├── Movies.jsx
+│   │   │   └── Movies.css
+│   │   ├── Search/
+│   │   │   ├── Search.jsx
+│   │   │   └── Search.css
+│   │   ├── SingleMovie/
+│   │   │   ├── SingleMovie.jsx
+│   │   │   └── SingleMovie.css
+│   │   └── PageNotFound/
+│   │       └── PageNotFound.jsx
+│   ├── Context.jsx
+│   ├── App.jsx
+│   ├── App.css
+│   └── main.jsx
+│
+├── index.html
+├── .env
+└── package.json
+```
+
+---
+
+## ▶️ Run the Project
+
+```bash
+npm install
+npm run dev
+```
+
+> **Note:** You need a free TMDB API key. Create a `.env` file in the root:
+
+```env
+VITE_TMDB_KEY=your_api_key_here
+```
+
+Get your free API key at [https://www.themoviedb.org/settings/api](https://www.themoviedb.org/settings/api)
+
+---
+
+## 💡 Key Concepts Used
+
+* React Hooks (**useState, useEffect, useContext**)
+* **Context API** for global state management
+* **React Router DOM** for client-side routing
+* Async/Await & Fetch API
+* TMDB REST API (Search, Movie Details, Videos)
+* Error Handling & Loading States
+* Material UI Skeleton Integration
+* Scroll restoration on route change
+* Component-based Architecture
+
+---
+
+## 👨‍💻 Author
+
+Sachin  
+[https://github.com/sachin-codes01](https://github.com/sachin-codes01)

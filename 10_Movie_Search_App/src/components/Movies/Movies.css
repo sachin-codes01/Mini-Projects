@@ -8,13 +8,14 @@
   text-align: center;
   margin-top: 80px;
   color: #555b74;
-  font-size: 1.1rem;
+  font-size: 18px;
 }
 
 .movies-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
   gap: 24px;
+  padding-top: 10px;
 }
 
 .movie-card {
@@ -22,7 +23,7 @@
   flex-direction: column;
   background: #1a1d26;
   border-radius: 12px;
-  overflow: hidden;
+  overflow: visible;
   border: 1px solid #2e3345;
   transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
   cursor: pointer;
@@ -41,18 +42,22 @@
   aspect-ratio: 2 / 3;
   object-fit: cover;
   display: block;
+  border-radius: 12px 12px 0 0;
 }
 
 .movie-card h3 {
-  font-size: 0.88rem;
+  font-size: 14px;
   font-weight: 600;
   padding: 10px 12px 4px;
   color: #e8eaf0;
-  letter-spacing: 0.01em;
+  letter-spacing: 0.2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .movie-card p {
-  font-size: 0.82rem;
+  font-size: 13px;
   color: #e8b04b;
   padding: 0 12px 12px;
   font-family: monospace;
@@ -80,10 +85,6 @@
   gap: 6px;
 }
 
-.skeleton-card .MuiSkeleton-wave::after {
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.06), transparent);
-}
-
 @media (max-width: 605px) {
   .container {
     padding: 0 10px 40px;
@@ -99,21 +100,16 @@
   }
 
   .movie-card img {
-    width: 100%;
-    aspect-ratio: 2 / 3;
-    object-fit: cover;
+    border-radius: 6px 6px 0 0;
   }
 
   .movie-card h3 {
-    font-size: 0.6rem;
+    font-size: 10px;
     padding: 4px 5px 2px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
   }
 
   .movie-card p {
-    font-size: 0.6rem;
+    font-size: 10px;
     padding: 0 5px 6px;
   }
 }

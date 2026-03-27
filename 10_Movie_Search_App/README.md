@@ -1,30 +1,32 @@
 # 🎬 Movie Search App (React)
 
 A clean and responsive **Movie Search App** built using **React** and the **TMDB API**.  
-This project demonstrates **API integration, real-time search, movie details, trailer embedding, rate-limit handling, and dynamic UI rendering** in a real-world React application.
+This project demonstrates **API integration, real-time search, categorized movie rows, drag-to-scroll, movie details, trailer embedding, and dynamic UI rendering** in a real-world React application.
 
 ---
 
 ## 📸 Screenshots
 
 <p align="left">
-  <img src="public/moviesSearch01.png" width="48%" />
-  <img src="public/moviesSearch02.png" width="48%" />
+  <img src="public/movies01.png" width="32%" />
+  <img src="public/movies02.png" width="32%" />
+  <img src="public/movies03.png" width="32%" />
 </p>
+
 ---
 
 ## 🚀 Features
 
-* 🔍 **Search any movie** by title in real time
-* 👤 Displays **movie details** — poster, title, tagline, overview, and release date
-* 📊 Shows **rating, runtime, budget, and genres** at a glance
-* 🎥 Embeds **YouTube trailer** directly on the movie detail page
-* ⚠️ Handles **API errors** with friendly error messages
-* ❌ **"No Movies Found"** state for invalid or empty searches
-* ⏳ **Skeleton loader** (Material UI) while data is being fetched
-* ✕ **Clear button** to instantly reset the search
-* 🔙 **Back button** on movie detail page to return to results
-* ⚡ Smooth, responsive, and interactive UI
+* 🔍 **Real-time search** — debounced search as you type, results shown instantly
+* 🏠 **Home category rows** — browse Popular, Top Rated, Now Playing, and Upcoming movies in horizontal rows
+* 🖱️ **Drag-to-scroll rows** — click and drag left/right to explore movies; posters are protected from copying
+* 👤 **Movie detail page** — poster, title, tagline, overview, rating, runtime, budget, and genres
+* 🎥 **Embedded YouTube trailer** on the movie detail page
+* ⏳ **Skeleton loaders** (Material UI) for both grid and row views while data loads
+* ✕ **Clear button** to instantly reset the search and return to category rows
+* 🔙 **Back button** on the detail page to return to previous results
+* ⚠️ **Error & empty states** handled gracefully
+* 📱 Fully **responsive** layout for desktop and mobile
 
 ---
 
@@ -47,8 +49,9 @@ This project demonstrates **API integration, real-time search, movie details, tr
 Movie_Search_App/
 │
 ├── public/
-│   ├── moviesSearch01.png
-│   └── moviesSearch02.png
+│   ├── movies01.png
+│   ├── movies02.png
+│   └── movies03.png
 ├── src/
 │   ├── components/
 │   │   ├── Home/
@@ -57,6 +60,9 @@ Movie_Search_App/
 │   │   ├── Movies/
 │   │   │   ├── Movies.jsx
 │   │   │   └── Movies.css
+│   │   ├── MovieRow/
+│   │   │   ├── MovieRow.jsx
+│   │   │   └── MovieRow.css
 │   │   ├── Search/
 │   │   │   ├── Search.jsx
 │   │   │   └── Search.css
@@ -96,15 +102,17 @@ Get your free API key at [https://www.themoviedb.org/settings/api](https://www.t
 
 ## 💡 Key Concepts Used
 
-* React Hooks (**useState, useEffect, useContext**)
-* **Context API** for global state management
-* **React Router DOM** for client-side routing
-* Async/Await & Fetch API
-* TMDB REST API (Search, Movie Details, Videos)
-* Error Handling & Loading States
-* Material UI Skeleton Integration
+* React Hooks (`useState`, `useEffect`, `useContext`, `useRef`)
+* **Context API** for global state management across all components
+* **React Router DOM** for client-side routing and navigation
+* Parallel API calls with `Promise.all` for fetching multiple categories at once
+* Debounced search with `setTimeout` / `clearTimeout`
+* Drag-to-scroll using `useRef` and mouse event handlers
+* Async/Await & Fetch API with error handling
+* TMDB REST API — Discover, Search, Movie Details, Videos endpoints
+* Material UI Skeleton for loading states
 * Scroll restoration on route change
-* Component-based Architecture
+* Component-based architecture
 
 ---
 

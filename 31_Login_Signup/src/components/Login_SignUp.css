@@ -1,0 +1,211 @@
+.container {
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.container form {
+    background-color: #fffdf9;
+    border: 1px solid #e0d6cc;
+    border-radius: 4px;
+    padding: 44px 40px 36px;
+    box-shadow:
+        0 2px 6px rgba(90, 60, 40, 0.06),
+        0 12px 40px rgba(90, 60, 40, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.heading {
+    margin-bottom: 20px;
+}
+
+.heading h3 {
+    font-family: 'Georgia', serif;
+    font-size: 26px;
+    font-weight: normal;
+    color: #2c1f14;
+    letter-spacing: 0.5px;
+    position: relative;
+    padding-bottom: 12px;
+}
+
+.heading h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 36px;
+    height: 2px;
+    background-color: #c26a3a;
+    border-radius: 2px;
+}
+
+label {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: #7a6558;
+    margin-top: 14px;
+    margin-bottom: 4px;
+    display: block;
+}
+
+input {
+    width: 100%;
+    padding: 11px 14px;
+    font-family: 'Georgia', serif;
+    font-size: 15px;
+    color: #2c1f14;
+    background-color: #faf7f4;
+    border: 1px solid #d8cfc8;
+    border-radius: 3px;
+    outline: none;
+    transition:
+        border-color 0.2s ease,
+        background-color 0.2s ease,
+        box-shadow 0.2s ease;
+    display: block;
+}
+
+input:focus {
+    border-color: #c26a3a;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(194, 106, 58, 0.1);
+}
+
+input::placeholder {
+    color: #c2b5ab;
+}
+
+input.input-error {
+    border-color: #c0392b;
+    background-color: #fff8f7;
+}
+
+input.input-error:focus {
+    box-shadow: 0 0 0 3px rgba(192, 57, 43, 0.1);
+}
+
+.error {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    color: #c0392b;
+    margin-top: 4px;
+    padding-left: 2px;
+    animation: fadeIn 0.2s ease both;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-4px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.heading .error {
+    margin-top: 8px;
+    padding: 8px 12px;
+    background-color: #fdf2f1;
+    border-left: 3px solid #c0392b;
+    border-radius: 2px;
+}
+
+.redirect-text {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    color: #9c8c84;
+    margin-top: 20px;
+    margin-bottom: 4px;
+    text-align: center;
+}
+
+.redirect-text span {
+    color: #c26a3a;
+    cursor: pointer;
+    font-weight: 600;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.15s ease;
+}
+
+.redirect-text span:hover {
+    border-bottom-color: #c26a3a;
+}
+
+button[type='submit'] {
+    width: 100%;
+    padding: 13px;
+    margin-top: 8px;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    color: #ffffff;
+    background-color: #c26a3a;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition:
+        background-color 0.2s ease,
+        transform 0.15s ease,
+        box-shadow 0.2s ease;
+}
+
+button[type='submit']:hover {
+    background-color: #a8562e;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 18px rgba(194, 106, 58, 0.32);
+}
+
+button[type='submit']:active {
+    transform: translateY(0);
+    box-shadow: none;
+    background-color: #8e4525;
+}
+
+button[type='submit']::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.15);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+button[type='submit']:active::after {
+    opacity: 1;
+}
+
+
+.logout-btn {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.logout-btn:hover {
+  background-color: #e60000;
+  transform: scale(1.05);
+}
+
+.logout-btn:active {
+  transform: scale(0.98);
+}

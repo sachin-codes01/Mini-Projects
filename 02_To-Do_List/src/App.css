@@ -101,7 +101,6 @@ form textarea {
     background-color: #e2e2e2;
 }
 
-
 /* -------- Table -------- */
 
 table,
@@ -215,7 +214,6 @@ tr.completed-row td {
     text-decoration: line-through;
     color: #999;
 }
-
 
 td:nth-child(1) {
     text-align: center;

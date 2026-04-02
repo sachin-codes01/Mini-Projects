@@ -7,9 +7,9 @@ A clean and minimal **Authentication UI** built with **React**, featuring form v
 ## 📸 Screenshots
 
 <p align="center">
-  <img src="public/register.png" alt="Register Page" width="45%" />
+  <img src="public/register.png" alt="Register Page" height="300" />
   &nbsp;&nbsp;
-  <img src="public/login.png" alt="Login Page" width="45%" />
+  <img src="public/login.png" alt="Login Page" height="300" />
 </p>
 
 ---

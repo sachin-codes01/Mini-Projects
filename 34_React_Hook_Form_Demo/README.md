@@ -1,4 +1,4 @@
-# 📋 React Hook Form Demo
+# 📋 React Hook Form
 
 A clean and validated **Registration Form** built using **React Hook Form** and **Yup**.  
 This project demonstrates **schema-based validation, error handling, password confirmation, and controlled form submission** in a real-world React application.

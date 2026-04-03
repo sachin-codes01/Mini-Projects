@@ -37,7 +37,7 @@ function App() {
 
   return (
     <div className="form-container">
-      <h2>React Hook Form Demo</h2>
+      <h2>React Hook Form</h2>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="form-group">
           <label>Name</label>

@@ -1,293 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f0f2f5;
-    color: #333;
+    background-color: #111118;
+    font-family: 'Nunito', sans-serif;
+    color: #e2e2ec;
+    min-height: 100vh;
 }
 
 .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 24px;
-    margin: 40px auto;
-    max-width: 950px;
-    width: 100%;
-    padding: 0 16px;
-}
-
-.form-container,
-.table-container {
-    background: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-    padding: 28px;
-    width: 100%;
+    max-width: 760px;
+    margin: 50px auto;
+    padding: 36px 32px;
+    background-color: #1c1c28;
+    border-radius: 16px;
+    border: 1px solid #2e2e40;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5);
 }
 
 h2 {
-    font-size: 24px;
-    font-weight: 700;
-    color: #2c3e50;
-    margin-bottom: 20px;
-    border-left: 4px solid #4f46e5;
-    padding-left: 10px;
+    text-align: center;
+    font-size: 26px;
+    font-weight: 800;
+    color: #f0a500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 28px;
 }
 
-form {
+.form-container {
     display: flex;
     flex-direction: column;
-    gap: 14px;
+    gap: 12px;
+    margin-bottom: 32px;
+    background-color: #22222f;
+    padding: 22px;
+    border-radius: 12px;
+    border: 1px solid #2e2e40;
 }
 
-form input,
-form textarea {
+.task-name-input,
+select {
     width: 100%;
-    padding: 12px 14px;
-    font-size: 15px;
-    font-family: inherit;
-    border: 1.5px solid #ddd;
+    padding: 11px 14px;
+    font-size: 14px;
+    font-family: 'Nunito', sans-serif;
+    background-color: #2a2a3c;
+    color: #e2e2ec;
+    border: 1px solid #3a3a52;
     border-radius: 8px;
     outline: none;
-    transition: border-color 0.2s, box-shadow 0.2s;
-    background-color: #fafafa;
-    color: #333;
 }
 
-form textarea {
+.task-input {
+    width: 100%;
+    padding: 11px 14px;
+    font-size: 14px;
+    font-family: 'Nunito', sans-serif;
+    background-color: #2a2a3c;
+    color: #e2e2ec;
+    border: 1px solid #3a3a52;
+    border-radius: 8px;
+    outline: none;
     height: 100px;
-    resize: none;
+    resize: vertical;
+    line-height: 22px;
 }
 
-.form-buttons {
-    display: flex;
-    justify-content: end;
-    gap: 10px;
+.task-name-input::placeholder,
+.task-input::placeholder {
+    color: #606078;
 }
 
-.submitBtn {
-    padding: 11px;
-    background-color: #4f46e5;
-    color: white;
-    font-size: 15px;
-    font-weight: 600;
+.task-name-input:focus,
+.task-input:focus,
+select:focus {
+    border-color: #f0a500;
+    background-color: #2f2f42;
+}
+
+select {
+    cursor: pointer;
+    appearance: none;
+}
+
+select option {
+    background-color: #2a2a3c;
+    color: #e2e2ec;
+}
+
+.submit-btn {
+    padding: 12px;
+    font-size: 14px;
+    font-weight: 700;
+    font-family: 'Nunito', sans-serif;
+    background-color: #f0a500;
+    color: #111118;
     border: none;
     border-radius: 8px;
-    transition: background-color 0.2s, transform 0.1s;
     cursor: pointer;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
-.submitBtn:hover {
-    background-color: #4338ca;
+.submit-btn:hover {
+    background-color: #ffb829;
 }
 
-.submitBtn:active {
-    transform: scale(0.98);
-}
-
-.cancelBtn {
-    padding: 11px 20px;
-    background-color: rgb(231, 229, 229);
-    color: #555;
-    font-size: 15px;
-    font-weight: 600;
-    border: 1.5px solid #ddd;
-    border-radius: 8px;
-    border: 1px solid gray;
-    cursor: pointer;
-    transition: background-color 0.2s;
-}
-
-.cancelBtn:hover {
-    background-color: #e2e2e2;
-}
-
-/* -------- Table -------- */
-
-table,
-th,
-td {
-    /* border: 1px solid black; */
-    border-collapse: collapse;
+.table-container {
+    overflow-x: auto;
+    border-radius: 10px;
+    border: 1px solid #2e2e40;
 }
 
 table {
     width: 100%;
+    border-collapse: collapse;
     font-size: 14px;
 }
 
 thead {
-    background-color: #4f46e5;
-    color: white;
+    background-color: #22222f;
 }
 
-thead th {
-    padding: 10px;
+th {
+    padding: 12px 16px;
     text-align: left;
-    font-weight: 600;
-    letter-spacing: 0.2px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #f0a500;
+    border-bottom: 2px solid #f0a500;
 }
 
-thead th:first-child {
-    border-radius: 8px 0 0 0;
+td {
+    padding: 13px 16px;
+    border-bottom: 1px solid #2a2a3c;
+    color: #c0c0d8;
+    vertical-align: middle;
 }
 
-thead th:last-child {
-    border-radius: 0 8px 0 0;
+tbody tr:last-child td {
+    border-bottom: none;
 }
 
-tbody tr {
-    border-bottom: 1px solid #b8b8b8;
-}
-
-.desc-cell {
-    max-height: 70px;
-    overflow-y: auto;
-    white-space: pre-wrap;
-    word-break: break-word;
-    line-height: 1.6;
-    font-size: 13px;
-    scrollbar-width: thin;
-    scrollbar-color: #ccc transparent;
-}
-
-.desc-cell::-webkit-scrollbar {
-    width: 4px;
-}
-
-.desc-cell::-webkit-scrollbar-thumb {
-    background: #ccc;
-    border-radius: 99px;
-}
-
-.buttons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
-}
-
-.buttons button {
-    padding: 6px 14px;
-    font-size: 13px;
-    font-weight: 500;
-    border-radius: 6px;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.2s, transform 0.1s;
-}
-
-.buttons button:first-child {
-    background-color: #eef2ff;
-    color: #4f46e5;
-}
-
-.buttons button:first-child:hover {
-    background-color: #e0e7ff;
-}
-
-.buttons button:last-child {
-    background-color: #fff0f0;
-    color: #e53e3e;
-}
-
-.buttons button:last-child:hover {
-    background-color: #ffe0e0;
-}
-
-.buttons button:active {
-    transform: scale(0.96);
-}
-
-.empty-state {
-    text-align: center;
-    padding: 30px;
-    color: #aaa;
-    font-size: 15px;
-}
-
-tr.completed-row {
-    background-color: #e8f5e9;
-    color: #888;
-}
-
-tr.completed-row td {
-    text-decoration: line-through;
-    color: #999;
-}
-
-td:nth-child(1) {
-    text-align: center;
-    color: #888;
-}
-
-td:nth-child(2) {
-    text-align: center;
-    color: #888;
-}
-
-td:nth-child(3) {
-    min-width: 150px;
-    max-width: 250px;
-    padding: 5px;
+tbody tr:hover td {
+    background-color: #22222f;
+    color: #e2e2ec;
 }
 
 td:nth-child(4) {
-    min-width: 150px;
-    max-width: 500px;
-    padding: 5px;
-
+    font-weight: 700;
+    text-transform: capitalize;
 }
 
-td:nth-child(5) {
-    min-width: 120px;
+.edit-btn,
+.delete-btn {
+    padding: 6px 14px;
+    font-size: 12px;
+    font-weight: 700;
+    font-family: 'Nunito', sans-serif;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-right: 6px;
 }
 
-.buttons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    margin: 10px 20px;
+.edit-btn {
+    background-color: #1e3a3a;
+    color: #2dd4bf;
+    border: 1px solid #2dd4bf;
 }
 
+.edit-btn:hover {
+    background-color: #2dd4bf;
+    color: #111118;
+}
 
-@media (max-width: 768px) {
-    .table-container {
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-    }
+.delete-btn {
+    background-color: #3a1e1e;
+    color: #f87171;
+    border: 1px solid #f87171;
+}
 
-    table {
-        min-width: 560px;
+.delete-btn:hover {
+    background-color: #f87171;
+    color: #111118;
+}
+
+.empty-headline {
+    text-align: center;
+    color: #50506a;
+    font-size: 15px;
+    padding: 36px 0;
+    font-style: italic;
+    letter-spacing: 0.5px;
+}
+
+@media (max-width: 520px) {
+    .container {
+        margin: 16px;
+        padding: 20px 16px;
     }
 
     th,
     td {
-        font-size: 13px;
-        padding: 9px 10px;
+        padding: 10px 10px;
+        font-size: 12px;
     }
 
-    .buttons {
-        flex-direction: column;
-        gap: 5px;
-    }
-
-    .buttons button {
+    .edit-btn,
+    .delete-btn {
+        display: block;
         width: 100%;
-    }
-}
-
-@media (max-width: 480px) {
-    .container {
-        margin: 20px auto;
-    }
-
-    .form-container,
-    .table-container {
-        padding: 16px;
-    }
-
-    h2 {
-        font-size: 20px;
+        margin-right: 0;
+        margin-bottom: 5px;
+        text-align: center;
     }
 }

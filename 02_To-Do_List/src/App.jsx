@@ -1,130 +1,122 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
 
-function App() {
-  const [taskName, setTaskName] = useState('')
-  const [taskDes, setTaskDes] = useState('')
-  const [tasks, setTasks] = useState([])
-  const [edit, setEdit] = useState(null)
+const App = () => {
+  const [input, setInput] = useState({
+    taskName: '',
+    task: '',
+    Priority: '',
+  })
+
+  ////local storage 
+  const [data, setData] = useState(() => {
+    const savedData = localStorage.getItem('todoData')
+    return savedData ? JSON.parse(savedData) : []
+  })
+
+  const [nextId, setNextId] = useState(() => {
+    const savedData = localStorage.getItem('todoData')
+    const parsed = savedData ? JSON.parse(savedData) : []
+    return parsed.length > 0 ? Math.max(...parsed.map(item => item.id)) + 1 : 1
+  })
+
+  const [editId, setEditId] = useState(null)
+
+  useEffect(() => {
+    localStorage.setItem('todoData', JSON.stringify(data))
+  }, [data])
+
+  ////without local storage
+  // const [data, setData] = useState([])
+  // const [nextId, setNextId] = useState(1)
+  // const [editId, setEditId] = useState(null)
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    if (!taskName || !taskDes) return;
 
-    if (edit !== null) {
-      let updateTask = tasks.map((task) => task.id === edit ? { ...task, taskName, taskDes } : task)
-      setTasks(updateTask)
-      setEdit(null)
-    } else {
-      let oneData = {
-        id: tasks.length + 1,
-        taskName: taskName,
-        taskDes: taskDes,
-        completed: false,
-      }
-
-      setTasks(tasks.concat(oneData))
-      // setTasks([...tasks,oneData])
+    if (!input.taskName || !input.task || !input.Priority) {
+      alert("Please fill all fields")
+      return
     }
 
-    setTaskName('')
-    setTaskDes('')
+    if (editId !== null) {
+      const updateData = data.map((item) => item.id === editId ? { ...item, ...input } : item)
+      setData(updateData)
+      setEditId(null)
+    } else {
+      setData([{ ...input, id: nextId }, ...data])
+      setNextId(nextId + 1)
+    }
+
+    setInput({
+      taskName: '',
+      task: '',
+      Priority: '',
+    })
   }
 
   const handleDelete = (id) => {
-    let AfterDelete = tasks.filter(t => t.id !== id)
-    setTasks(AfterDelete)
-    setTaskName('')
-    setTaskDes('')
+    setData(data.filter((item) => item.id !== id))
   }
 
-  const handleUpdate = (id) => {
-    let taskEdit = tasks.find(task => task.id === id)
-    setTaskName(taskEdit.taskName)
-    setTaskDes(taskEdit.taskDes)
-    setEdit(id)
-  }
-
-  const handleChecked = (id) => {
-    let completeChecked = tasks.map(task => task.id === id ? { ...task, completed: !task.completed } : task)
-    setTasks(completeChecked)
-  }
-
-  const handleCancel = () => {
-    setEdit(null)
-    setTaskName('')
-    setTaskDes('')
+  const handleEdit = (id) => {
+    const selectedItem = data.find((item) => item.id === id)
+    setInput({
+      taskName: selectedItem.taskName,
+      task: selectedItem.task,
+      Priority: selectedItem.Priority,
+    })
+    setEditId(id)
   }
 
   return (
-    <div className="box">
-      <div className="container">
-        <div className="form-container">
-          <h2>ToDo List</h2>
+    <div className='container'>
+      <h2>ToDo List</h2>
 
-          {/* ---------------- Form ------------------- */}
+      <div className="form-container">
+        <input type="text" className='task-name-input' placeholder='Task Name...' value={input.taskName}
+          onChange={(e) => { setInput({ ...input, taskName: e.target.value }) }} />
+        <textarea className='task-input' placeholder='Task...' value={input.task}
+          onChange={(e) => { setInput({ ...input, task: e.target.value }) }} />
 
-          <form onSubmit={handleSubmit}>
-            <input className='input-1' type="text" placeholder='Enter task name...'
-              value={taskName} onChange={(e) => setTaskName(e.target.value)} />
+        <select name="importance" id="importance" value={input.Priority}
+          onChange={(e) => { setInput({ ...input, Priority: e.target.value }) }}>
+          <option value="" disabled>Priority</option>
+          <option value="high">High</option>
+          <option value="medium">Medium</option>
+          <option value="low">Low</option>
+        </select>
 
-            <textarea className='input-2' placeholder='Enter task...'
-              value={taskDes} onChange={(e) => setTaskDes(e.target.value)} style={{
-                // width: "400px",
-                height: "100px",
-                resize: "none",
-                padding: "10px",
-              }} />
+        <button type='submit' className='submit-btn' onClick={handleSubmit}>{editId !== null ? "Update" : "Submit"}</button>
+      </div>
 
-            <div className="form-buttons">
-              {edit !== null && <button className='cancelBtn' onClick={handleCancel}>Cancel</button>}
-              <button className='submitBtn' type="submit">{edit !== null ? 'Update' : 'Submit'}</button>
-            </div>
-          </form>
-        </div>
+      <div className="table-container">
+        {data.length > 0 ? (<table border='1'>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Task Name</th>
+              <th>Task</th>
+              <th>Priority</th>
+              <th>Action</th>
+            </tr>
+          </thead>
 
-        {/* ---------------- Table ------------------- */}
-
-        <div className="table-container">
-          <table>
-            <thead>
-              <tr>
-                <th>ID</th>
-                <th>Done</th>
-                <th>Task Name</th>
-                <th>Task Description</th>
-                <th>Action</th>
-              </tr>
-            </thead>
-
-            {tasks.length === 0 ? (
-              <tr>
-                <td colSpan="5">
-                  No tasks found. Add a task to get started!
+          <tbody>
+            {data.map((item) => (
+              <tr key={item.id}>
+                <td>{item.id}</td>
+                <td>{item.taskName}</td>
+                <td>{item.task}</td>
+                <td>{item.Priority}</td>
+                <td>
+                  <button className='edit-btn' type='button' onClick={() => handleEdit(item.id)}>Edit</button>
+                  <button className='delete-btn' type='button' onClick={() => handleDelete(item.id)}>Delete</button>
                 </td>
               </tr>
-            ) : (
-              <tbody>{tasks.map((task) => (
-                <tr key={task.id} className={task.completed ? 'completed-row' : ''}>
-                  <td data-label="ID">{task.id}</td>
-                  <td data-label="Done">
-                    <input id='checklist' type="checkbox" onChange={() => handleChecked(task.id)} />
-                  </td>
-                  <td data-label="Task Name"><div className="desc-cell">{task.taskName}</div></td>
-                  <td data-label="Description"><div className="desc-cell">{task.taskDes}</div></td>
-                  <td data-label="Action">
-                    <div className="buttons">
-                      <button onClick={() => handleUpdate(task.id)}>Update</button>
-                      <button onClick={() => handleDelete(task.id)}>Delete</button>
-                    </div>
-                  </td>
-                </tr>
-              ))}
-              </tbody>
-            )}
-
-          </table>
-        </div>
+            ))}
+          </tbody>
+        </table>) : (<h3 className='empty-headline'>Data not Available</h3>)}
       </div>
     </div>
   )

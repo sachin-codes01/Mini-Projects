@@ -1,7 +1,7 @@
 # 📝 To-Do List App (React)
 
 A clean and functional **To-Do List App** built using **React** and the **useState Hook**.
-This mini project demonstrates **CRUD operations, state management, and conditional styling** in React.
+This mini project demonstrates **CRUD operations, state management, local storage persistence, and priority-based task tracking** in React.
 
 ---
 
@@ -13,21 +13,22 @@ This mini project demonstrates **CRUD operations, state management, and conditio
 
 ## 🚀 Features
 
-* ➕ Add tasks with a **name** and **description**
+* ➕ Add tasks with a **name**, **description**, and **priority level**
 * ✏️ Edit existing tasks inline
 * 🗑️ Delete tasks from the list
-* ✅ Mark tasks as **completed** (with visual strikethrough)
-* 🔄 Cancel editing and reset the form
-* 📋 Table view with ID, status, name, and description
+* 🔴🟡🟢 Assign **priority levels** — High, Medium, or Low
+* 💾 **LocalStorage** support — tasks persist after page refresh
+* 📋 Table view with ID, task name, description, and priority
 
 ---
 
 ## 🛠️ Technologies Used
 
 * React
-* JavaScript (ES6)
+* JavaScript (ES6+)
 * CSS3
 * HTML5
+* LocalStorage API
 
 ---
 
@@ -51,7 +52,7 @@ This mini project demonstrates **CRUD operations, state management, and conditio
 
 ## ▶️ Run the Project
 
-```
+```bash
 npm install
 npm run dev
 ```

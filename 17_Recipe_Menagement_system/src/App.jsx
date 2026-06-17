@@ -1,26 +1,28 @@
 import { useState } from 'react'
 import './App.css'
 import Api from './components/Api/Api.jsx'
-import Dashboard from './components/Dashboard/Dashboard'
-import Recipe from './components/Recipe/Recipe'
+import Dashboard from './components/Dashboard/Dashboard.jsx'
+import Recipe from './components/Recipe/Recipe.jsx'
 
-function App() {
+const App = () => {
+
   const [data, setData] = useState([])
   const [search, setSearch] = useState('')
+  const [selectMeal, setSelectMeal] = useState(null)
   const [loading, setLoading] = useState(false)
-  const [error, setError] = useState(null)
-  const [selectedRecipe, setSelectedRecipe] = useState(null)
+  const [error, setError] = useState('')
+  const [hasSearched, setHasSearched] = useState(false)
 
   return (
-    <>
+    <div>
       <h3 className='heading'>Recipe Management System</h3>
 
-      <Api search={search} setData={setData} setLoading={setLoading} setError={setError} />
-      {selectedRecipe ? (
-        <Recipe recipe={selectedRecipe} setSelectedRecipe={setSelectedRecipe} />
-      ) : (
-        <Dashboard setSearch={setSearch} search={search} data={data} loading={loading} error={error} setSelectedRecipe={setSelectedRecipe} />)}
-    </>
+      <Api search={search} setData={setData} setLoading={setLoading} setError={setError} setHasSearched={setHasSearched}></Api>
+      {selectMeal === null ?
+        <Dashboard search={search} setSearch={setSearch} data={data} setSelectMeal={setSelectMeal} loading={loading} error={error} hasSearched={hasSearched} ></Dashboard>
+        :
+        <Recipe selectMeal={selectMeal} setSelectMeal={setSelectMeal}></Recipe>}
+    </div>
   )
 }
 

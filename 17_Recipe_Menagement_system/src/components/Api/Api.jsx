@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import { useState, useEffect } from "react"
 
-const Api = ({ search, setData, setLoading, setError }) => {
+const Api = ({ search, setData, setLoading, setError, setHasSearched }) => {
   const [debouncedSearch, setDebouncedSearch] = useState('')
 
   useEffect(() => {
@@ -12,36 +12,45 @@ const Api = ({ search, setData, setLoading, setError }) => {
 
   useEffect(() => {
     const fetchData = async () => {
-      try {
-        setLoading(true)
-        setError(null)
 
+      setLoading(true)
+      setError('')
+      setHasSearched(false)
+
+      try {
         const response = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${debouncedSearch}`)
+        if (!response.ok) {
+          throw new Error('Kuch gadbad hui. Dobara try karo.')
+        }
         const ApiData = await response.json()
         console.log(ApiData.meals)
 
         if (ApiData.meals === null) {
-          setError("No results found")
           setData([])
         } else {
           setData(ApiData.meals)
         }
 
+        setHasSearched(true)
+
       } catch (error) {
+        setError(error.message || 'Data load nahi hua.')
         console.log(error)
-        setError("Something went wrong")
       } finally {
         setLoading(false)
       }
     }
+
     if (debouncedSearch) {
       fetchData()
     } else {
       setData([])
-      setError(null)
+      setLoading(false)
+      setError('')
+      setHasSearched(false)
     }
-  }, [debouncedSearch]
-  )
+
+  }, [debouncedSearch])
 
   return (
     <div>
